@@ -6,10 +6,12 @@
   </head>
 
   <body class="bg-catppuccin-base">
-    <main class="container mx-auto px-6 py-8 font-sans text-catppuccin-text">
+    <div id="particles-js" class="fixed inset-0 -z-10"></div>
+    <main class="container mx-auto px-6 py-8 font-sans text-catppuccin-text relative z-10">
       <%= yield %>
     </main>
     
+    <%= javascript_tag('particles.min.js') %>
     <%= javascript_tag('app.js') %>
   </body>
 </html>
