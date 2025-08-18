@@ -1,0 +1,24 @@
+<% yaml['releases'].each do |release| %>
+  <div class="bg-catppuccin-mantle px-4 py-3 mb-2 border-l-2 border-catppuccin-text release-block" data-target="<%= release['time'] %>">
+    <div class="flex justify-between items-start mb-2">
+      <h2><%= release['name'] %></h2>
+
+      <div class="text-right">
+        <p class="text-sm text-catppuccin-subtext0"><%= release['title']%></p>
+        <p class="bg-catppuccin-surface0 inline-block text-sm"><%= release['time'] %></p>
+      </div>
+    </div>
+    
+    <div class="flex justify-between items-center mt-10">
+      <div class="flex space-x-3">
+      <% release['buttons'].each do |button_key, button_url| %>
+        <%= button(button_key, button_url) %>
+      <% end %>
+      </div>
+
+      <div class="countdown text-right" data-target="<%= release['time'] %>">
+        <span class="text-xl font-bold"></span>
+      </div>
+    </div>
+  </div>
+<% end %>
