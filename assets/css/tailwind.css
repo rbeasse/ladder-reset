@@ -29,43 +29,43 @@
   --color-catppuccin-crust: #11111b;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.button {
+  @apply px-2;
+  @apply py-1.5;
+  @apply bg-catppuccin-blue;
+  @apply hover:bg-catppuccin-sapphire;
+  @apply text-catppuccin-base;
+  @apply text-xs;
+  @apply uppercase;
   @apply font-bold;
 }
 
-h1 {
-  @apply text-3xl border-b border-catppuccin-blue;
+.button:not(:first-child) {
+  @apply bg-catppuccin-red;
+  @apply hover:bg-catppuccin-maroon;
 }
 
-h2 {
-  @apply text-2xl;
+.button.disabled {
+  @apply bg-catppuccin-overlay0;
+  @apply text-catppuccin-subtext0;
+  @apply cursor-not-allowed;
+  @apply opacity-50;
 }
 
-h3 {
-  @apply text-xl;
+.button {
+  @apply flex;
+  @apply items-center;
+  @apply gap-1;
 }
 
-h4 {
-  @apply text-3xl;
+.button-icon {
+  @apply w-4;
+  @apply h-4;
+  @apply flex-shrink-0;
 }
 
-h5 {
-  @apply text-2xl;
-}
-
-h6 {
-  @apply text-xl;
-}
-
-.btn {
-  @apply px-3 py-1.5 bg-catppuccin-blue hover:bg-catppuccin-sapphire text-catppuccin-base text-sm uppercase font-bold;
-}
-
-.btn:not(:first-child) {
-  @apply bg-catppuccin-red hover:bg-catppuccin-maroon;
-}
-
-.btn-disabled {
-  @apply px-3 py-1.5 bg-catppuccin-overlay0 text-catppuccin-subtext0 text-sm uppercase font-bold cursor-not-allowed opacity-50;
+.button-icon svg {
+  @apply w-full;
+  @apply h-full;
 }
 

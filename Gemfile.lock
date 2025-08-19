@@ -1,0 +1,41 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    charsi (0.1.2)
+      filewatcher (~> 2.1)
+      logger (~> 1.6)
+      tailwindcss-ruby (~> 4.1)
+      terser (~> 1.2)
+      tilt (~> 2.6)
+      webrick (~> 1.9)
+    execjs (2.10.0)
+    filewatcher (2.1.0)
+      module_methods (~> 0.1.0)
+    logger (1.7.0)
+    module_methods (0.1.0)
+    tailwindcss-ruby (4.1.11)
+    tailwindcss-ruby (4.1.11-aarch64-linux-gnu)
+    tailwindcss-ruby (4.1.11-aarch64-linux-musl)
+    tailwindcss-ruby (4.1.11-arm64-darwin)
+    tailwindcss-ruby (4.1.11-x86_64-darwin)
+    tailwindcss-ruby (4.1.11-x86_64-linux-gnu)
+    tailwindcss-ruby (4.1.11-x86_64-linux-musl)
+    terser (1.2.6)
+      execjs (>= 0.3.0, < 3)
+    tilt (2.6.1)
+    webrick (1.9.1)
+
+PLATFORMS
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm64-darwin
+  ruby
+  x86_64-darwin
+  x86_64-linux-gnu
+  x86_64-linux-musl
+
+DEPENDENCIES
+  charsi
+
+BUNDLED WITH
+   2.6.8

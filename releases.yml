@@ -3,18 +3,28 @@ releases:
     title: "Season 3 - Beneath Ancient Skies"
     time: "2025-08-21T11:00:00-05:00"
     buttons:
-      patch_notes: "https://forum.lastepoch.com/t/last-epoch-beneath-ancient-skies-patch-notes/78635"
-      video: "https://www.youtube.com/watch?v=mO5Edh_xa-I"
+      patch_notes: 
+        url: "https://forum.lastepoch.com/t/last-epoch-beneath-ancient-skies-patch-notes/78635"
+        icon: "file-text"
+      video: 
+        url: "https://www.youtube.com/watch?v=mO5Edh_xa-I"
+        icon: "youtube"
     
   - name: "Path of Exile 2" 
     title: "The Third Edict"
     time: "2025-08-29T15:00:00-05:00"
     buttons:
-      patch_notes: ""
-      announcement: "https://www.youtube.com/watch?v=KiA_IFmidOQ"
+      patch_notes: 
+        url: ""
+        icon: "file-text"
+      announcement: 
+        url: "https://www.youtube.com/watch?v=KiA_IFmidOQ"
+        icon: "youtube"
     
   - name: "Hero Siege"
     title: "Season 8"
     time: "2025-09-12T07:00:00-05:00"
     buttons:
-      patch_notes: "https://docs.google.com/spreadsheets/d/1O0o55Gxvz4hRc1pFSo_daeuS9Ji5IgS-NFNpnF4meLk/edit?pli=1&gid=0#gid=0"
+      patch_notes: 
+        url: "https://docs.google.com/spreadsheets/d/1O0o55Gxvz4hRc1pFSo_daeuS9Ji5IgS-NFNpnF4meLk/edit?pli=1&gid=0#gid=0"
+        icon: "file-text"
