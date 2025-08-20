@@ -31,12 +31,8 @@ function updateCountdown(element) {
   
   if (days < 7) {
     timeSpan.classList.add('text-catppuccin-green');
-    releaseBlock.classList.add('border-catppuccin-green');
-    releaseBlock.classList.remove('border-catppuccin-text');
   } else {
     timeSpan.classList.remove('text-catppuccin-green');
-    releaseBlock.classList.remove('border-catppuccin-green');
-    releaseBlock.classList.add('border-catppuccin-text');
   }
 
   timeSpan.textContent = `${days}d ${hours}h ${minutes}m`;

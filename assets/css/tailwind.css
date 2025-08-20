@@ -64,8 +64,25 @@
   @apply flex-shrink-0;
 }
 
+.countdown span.button-icon {
+  @apply w-4;
+  @apply h-4;
+  @apply inline-block;
+}
+
 .button-icon svg {
   @apply w-full;
   @apply h-full;
+}
+
+.no-spacing {
+  line-height: 0;
+  font-size: 0;
+  vertical-align: top;
+}
+
+.no-spacing * {
+  line-height: 1;
+  vertical-align: baseline;
 }
 
