@@ -56,6 +56,9 @@
   @apply flex;
   @apply items-center;
   @apply gap-1;
+  @apply whitespace-nowrap;
+  @apply overflow-hidden;
+  @apply text-ellipsis;
 }
 
 .button-icon {

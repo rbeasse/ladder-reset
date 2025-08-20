@@ -1,15 +1,30 @@
 function localizeTime(element) {
   const date = new Date(element.textContent);
+  const container = document.querySelector('main.container');
+  const containerWidth = container ? container.offsetWidth : window.innerWidth;
 
-  const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: true
-  };
+  let options;
+  
+  if (containerWidth < 500) {
+    options = {
+      year: '2-digit',
+      month: '2-digit',
+      day: '2-digit',
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    };
+  } else {
+    options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true
+    };
+  }
 
   element.textContent = date.toLocaleDateString('en-US', options);
 }
