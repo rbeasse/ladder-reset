@@ -28,3 +28,8 @@ releases:
       patch_notes: 
         url: "https://docs.google.com/spreadsheets/d/1O0o55Gxvz4hRc1pFSo_daeuS9Ji5IgS-NFNpnF4meLk/edit?pli=1&gid=0#gid=0"
         icon: "file-text"
+
+  - name: "Diablo 4"
+    title: "Season 10 - Infernal Chaos"
+    time: "2025-09-23T12:00:00-05:00"
+    buttons: {}
