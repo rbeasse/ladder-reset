@@ -15,10 +15,10 @@ releases:
     time: "2025-08-29T15:00:00-05:00"
     buttons:
       patch_notes: 
-        url: ""
+        url: "https://www.pathofexile.com/forum/view-thread/3826682"
         icon: "file-text"
-      announcement: 
-        url: "https://www.youtube.com/watch?v=KiA_IFmidOQ"
+      video: 
+        url: "https://www.youtube.com/watch?v=zXLzXS4I2ak"
         icon: "youtube"
     
   - name: "Hero Siege"
