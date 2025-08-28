@@ -37,6 +37,7 @@ function updateCountdown(element) {
   const releaseBlock   = element.closest('.release-block');
 
   if (timeDifference <= 0) {
+    _timeSince(element);
     return;
   }
   
@@ -51,6 +52,21 @@ function updateCountdown(element) {
   }
 
   timeSpan.textContent = `${days}d ${hours}h ${minutes}m`;
+}
+
+function _timeSince(element) {
+  const releaseTime = new Date(element.dataset.time);
+  const currentTime = new Date();
+  const timeDifference = currentTime - releaseTime;
+  const timeSpan = element.querySelector('span');
+  
+  const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  
+  if (days === 0) {
+    timeSpan.textContent = 'Today';
+  } else {
+    timeSpan.textContent = `${days} day${days === 1 ? '' : 's'} ago`;
+  }
 }
 
 const timeHelper = {

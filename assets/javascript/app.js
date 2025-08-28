@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const countdownElements  = document.querySelectorAll('.countdown');
 
   // Localize all time elements
-  timeElements.forEach(element => {    
+  timeElements.forEach(element => {
     timeHelper.localizeTime(element);
   });
 
@@ -16,4 +16,3 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(() => timeHelper.updateCountdown(element), 5000);
   });
 });
-sta

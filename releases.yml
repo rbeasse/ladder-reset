@@ -37,6 +37,5 @@ releases:
   - name: "Borderlands 4"
     title: "Launch"
     time: "2025-09-12T12:00:00-05:00"
-    type: "release"
-    background: "assets/images/blands.png"
+    block: "release_block"
     buttons: {}

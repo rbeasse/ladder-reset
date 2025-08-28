@@ -1,0 +1,12 @@
+<div class="release-block <%= game_class(release['name']) %>" data-target="<%= release['time'] %>">
+  <div class="flex justify-between items-center">
+      <div>
+        <span class="font-bold text-xl leading-none uppercase block -mt-0.5"><%= release['name'] %></span>
+        <p class="text-sm text-catppuccin-subtext0"><%= release['title']%></p>
+      </div>
+
+      <div class="text-right">
+        <p class="local-time" title="<%= release['time'] %>"><%= release['time'] %></p>
+      </div>
+    </div>
+</div>

@@ -25,3 +25,7 @@ private
 def titleize(string)
   string.split('_').map(&:capitalize).join(' ')
 end
+
+def game_class(name)
+  name.downcase.gsub(/[^a-z0-9]+/, '-')
+end

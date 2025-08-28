@@ -1,6 +1,6 @@
-<%= render_partial('nav', current_page: 'upcoming') %>
+<%= render_partial('nav', current_page: 'history') %>
 
-<% upcoming_releases.each do |release| %>
+<% historical_releases.each do |release| %>
   <% block_type = release['block'] || 'normal_block' %>
 
   <%= render_partial(block_type, release: release) %>
