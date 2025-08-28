@@ -33,3 +33,10 @@ releases:
     title: "Season 10 - Infernal Chaos"
     time: "2025-09-23T12:00:00-05:00"
     buttons: {}
+
+  - name: "Borderlands 4"
+    title: "Launch"
+    time: "2025-09-12T12:00:00-05:00"
+    type: "release"
+    background: "assets/images/blands.png"
+    buttons: {}
