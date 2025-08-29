@@ -39,3 +39,11 @@ releases:
     time: "2025-09-12T12:00:00-05:00"
     block: "release_block"
     buttons: {}
+    
+  - name: "Diablo 3"
+    title: "Season 36 - The Lords of Hell"
+    time: "2025-09-12T17:00:00-05:00"
+    buttons:
+      patch_notes: 
+        url: "https://news.blizzard.com/en-us/article/24231417/season-36-the-lords-of-hell-preview"
+        icon: "file-text"
