@@ -47,3 +47,8 @@ releases:
       patch_notes: 
         url: "https://news.blizzard.com/en-us/article/24231417/season-36-the-lords-of-hell-preview"
         icon: "file-text"
+
+  - name: "Path of Exile"
+    title: "Prediction"
+    time: "2025-10-24T15:00:00-05:00"
+    buttons: {}
