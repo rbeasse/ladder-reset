@@ -49,5 +49,7 @@ releases:
         icon: "file-text"
 
   - name: "Path of Exile"
-    title: "Prediction"
+    title: "End of october?"
     time: "2025-10-24T15:00:00-05:00"
+    buttons: {}
+    block: "release_block"
