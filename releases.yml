@@ -48,6 +48,14 @@ releases:
         url: "https://news.blizzard.com/en-us/article/24231417/season-36-the-lords-of-hell-preview"
         icon: "file-text"
 
+  - name: "Torchlight Infinite"
+    title: "Overrealm"
+    time: "2025-10-10T21:00:00-05:00"
+    buttons:
+      preview:
+        url: "https://www.youtube.com/watch?v=vt9Ac2hv9hw"
+        icon: "youtube"
+
   - name: "Path of Exile"
     title: "End of october?"
     time: "2025-10-24T15:00:00-05:00"
