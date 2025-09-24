@@ -98,7 +98,7 @@
 .release-block {
   @apply bg-catppuccin-mantle;
   @apply p-2;
-  @apply mb-2;
+  @apply mb-1;
   @apply border;
   @apply border-catppuccin-blue;
   @apply relative;
@@ -134,6 +134,13 @@
 
 .borderlands-4 {
   background-image: linear-gradient(rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.8)), url('/assets/images/blands.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.path-of-exile {
+  background-image: linear-gradient(rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.8)), url('/assets/images/path-of-exile.png');
   background-size: cover;
   background-position: center;
 }
