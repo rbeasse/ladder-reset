@@ -58,5 +58,11 @@ releases:
 
   - name: "Path of Exile"
     title: "Keepers of the Flame"
-    time: "2025-10-31T15:00:00-05:00"
-    buttons: {}
+    time: "2025-10-31T14:00:00-05:00"
+    buttons:
+      patch_notes:
+        url: "https://www.pathofexile.com/forum/view-thread/3869068"
+        icon: "file-text"
+      video:
+        url: "https://www.youtube.com/watch?v=tfxxuVVGjPM"
+        icon: "youtube"
