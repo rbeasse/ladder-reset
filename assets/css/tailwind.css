@@ -151,6 +151,12 @@
   background-position: center;
 }
 
+.project-diablo-2 {
+  background-image: linear-gradient(rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.8)), url('/assets/images/project-diablo-2.png');
+  background-size: cover;
+  background-position: center;
+}
+
 .nav-link {
   @apply px-3;
   @apply py-2;

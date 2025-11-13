@@ -66,3 +66,7 @@ releases:
       video:
         url: "https://www.youtube.com/watch?v=tfxxuVVGjPM"
         icon: "youtube"
+  - name: "Project Diablo 2"
+    title: "Season 2 - Suffering"
+    time: "2025-11-28T12:00:00-05:00"
+    buttons: {}
