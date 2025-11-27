@@ -69,4 +69,7 @@ releases:
   - name: "Project Diablo 2"
     title: "Season 12 - Suffering"
     time: "2025-11-28T13:00:00-05:00"
-    buttons: {}
+    buttons:
+      patch_notes:
+        url: "https://docs.google.com/document/d/1sTGHhvm54IFq8tPz2NYrWd2kBcxHhygPRg3rGuiX_y0/edit?tab=t.0#heading=h.9kegd15e6zbz"
+        icon: "file-text"
