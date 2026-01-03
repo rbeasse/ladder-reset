@@ -73,3 +73,10 @@ releases:
       patch_notes:
         url: "https://docs.google.com/document/d/1sTGHhvm54IFq8tPz2NYrWd2kBcxHhygPRg3rGuiX_y0/edit?tab=t.0#heading=h.9kegd15e6zbz"
         icon: "file-text"
+  - name: "Torchlight Infinite"
+    title: "Vorax"
+    time: "2026-01-15T18:00:00-08:00"
+    buttons:
+      video: 
+        url: "https://youtu.be/_yM1UA907eI"
+        icon: "youtube"
