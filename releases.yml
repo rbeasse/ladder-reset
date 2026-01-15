@@ -80,3 +80,8 @@ releases:
       video: 
         url: "https://youtu.be/_yM1UA907eI"
         icon: "youtube"
+
+  - name: "Terraria"
+    title: "1.4.5"
+    time: "2026-01-27T12:00:00-05:00"
+    buttons: {}
