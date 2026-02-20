@@ -95,3 +95,19 @@ releases:
     title: "3.28"
     time: "2026-03-06T11:00:00-08:00"
     buttons: {}
+
+  - name: "Hero Siege"
+    title: "Season 9"
+    time: "2026-04-03T07:00:00-05:00"
+    buttons:
+      patch_notes:
+        url: "https://docs.google.com/spreadsheets/d/1ynq859UR3ufZ_flovUQCivNaGN_PVU-Kuyoc-c4cBNc/"
+        icon: "file-text"
+
+  - name: "Last Epoch"
+    title: "Season 4 - Shattered Omens"
+    time: "2026-04-03T11:00:00-06:00"
+    buttons:
+      video:
+        url: "https://www.youtube.com/watch?v=U8ubbH2bwVY"
+        icon: "youtube"
