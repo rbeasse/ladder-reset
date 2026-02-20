@@ -1,8 +1,115 @@
-# Releases
+releases:
+  - name: "Last Epoch"
+    title: "Season 3 - Beneath Ancient Skies"
+    time: "2025-08-21T11:00:00-05:00"
+    buttons:
+      patch_notes:
+        url: "https://forum.lastepoch.com/t/last-epoch-beneath-ancient-skies-patch-notes/78635"
+        icon: "file-text"
+      video:
+        url: "https://www.youtube.com/watch?v=mO5Edh_xa-I"
+        icon: "youtube"
 
-## Last Epoch
+  - name: "Path of Exile 2"
+    title: "The Third Edict"
+    time: "2025-08-29T15:00:00-05:00"
+    buttons:
+      patch_notes:
+        url: "https://www.pathofexile.com/forum/view-thread/3826682"
+        icon: "file-text"
+      video:
+        url: "https://www.youtube.com/watch?v=zXLzXS4I2ak"
+        icon: "youtube"
 
-- **Season 4 - Shattered Omens**: 2026-04-03T10:00:00-06:00
-- **Season 3 - Tempest of the Gods**: 2025-12-01T11:00:00-06:00
-- **Season 2 - Rise of the Ancients**: 2025-08-01T10:00:00-06:00
-- **Season 1 - Dawn of Time**: 2025-04-01T09:00:00-06:00
+  - name: "Hero Siege"
+    title: "Season 8"
+    time: "2025-09-12T07:00:00-05:00"
+    buttons:
+      patch_notes:
+        url: "https://docs.google.com/spreadsheets/d/1O0o55Gxvz4hRc1pFSo_daeuS9Ji5IgS-NFNpnF4meLk/edit?pli=1&gid=0#gid=0"
+        icon: "file-text"
+
+  - name: "Diablo 4"
+    title: "Season 10 - Infernal Chaos"
+    time: "2025-09-23T12:00:00-05:00"
+    buttons: {}
+
+  - name: "Borderlands 4"
+    title: "Launch"
+    time: "2025-09-11T11:00:00-05:00"
+    block: "release_block"
+    buttons: {}
+
+  - name: "Diablo 3"
+    title: "Season 36 - The Lords of Hell"
+    time: "2025-09-12T17:00:00-05:00"
+    buttons:
+      patch_notes:
+        url: "https://news.blizzard.com/en-us/article/24231417/season-36-the-lords-of-hell-preview"
+        icon: "file-text"
+
+  - name: "Torchlight Infinite"
+    title: "Overrealm"
+    time: "2025-10-10T21:00:00-05:00"
+    buttons:
+      preview:
+        url: "https://www.youtube.com/watch?v=vt9Ac2hv9hw"
+        icon: "youtube"
+
+  - name: "Path of Exile"
+    title: "Keepers of the Flame"
+    time: "2025-10-31T14:00:00-05:00"
+    buttons:
+      patch_notes:
+        url: "https://www.pathofexile.com/forum/view-thread/3869068"
+        icon: "file-text"
+      video:
+        url: "https://www.youtube.com/watch?v=tfxxuVVGjPM"
+        icon: "youtube"
+
+  - name: "Project Diablo 2"
+    title: "Season 12 - Suffering"
+    time: "2025-11-28T13:00:00-05:00"
+    buttons:
+      patch_notes:
+        url: "https://docs.google.com/document/d/1sTGHhvm54IFq8tPz2NYrWd2kBcxHhygPRg3rGuiX_y0/edit?tab=t.0#heading=h.9kegd15e6zbz"
+        icon: "file-text"
+
+  - name: "Torchlight Infinite"
+    title: "Vorax"
+    time: "2026-01-15T18:00:00-08:00"
+    buttons:
+      video:
+        url: "https://youtu.be/_yM1UA907eI"
+        icon: "youtube"
+
+  - name: "Terraria"
+    title: "1.4.5"
+    time: "2026-01-27T12:00:00-05:00"
+    buttons: {}
+
+  - name: "Diablo II: Resurrected"
+    title: "Ladder Reset"
+    time: "2026-02-20T19:00:00-06:00"
+    buttons: {}
+
+  - name: "Path of Exile"
+    title: "3.28"
+    time: "2026-03-06T11:00:00-08:00"
+    buttons: {}
+
+  - name: "Hero Siege"
+    title: "Season 9"
+    time: "2026-04-03T07:00:00-05:00"
+    buttons:
+      patch_notes:
+        url: "https://docs.google.com/spreadsheets/d/1ynq859UR3ufZ_flovUQCivNaGN_PVU-Kuyoc-c4cBNc/"
+        icon: "file-text"
+
+  - name: "Last Epoch"
+    title: "Season 4 - Shattered Omens"
+    time: "2026-03-26T10:00:00-06:00"
+    buttons:
+      video:
+        url: "https://www.youtube.com/watch?v=U8ubbH2bwVY"
+        icon: "youtube"
