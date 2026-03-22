@@ -4,12 +4,16 @@
   "features": {
     "ghcr.io/devcontainers/features/node:1": {}
   },
+  "mounts": [
+    "source=${localEnv:USERPROFILE}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
+  ],
   "postCreateCommand": "bundle install",
   "forwardPorts": [8000],
   "customizations": {
     "vscode": {
       "extensions": [
-        "shopify.ruby-lsp"
+        "shopify.ruby-lsp",
+        "anthropic.claude-code"
       ]
     }
   }
