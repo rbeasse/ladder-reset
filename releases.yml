@@ -113,3 +113,22 @@ releases:
       video:
         url: "https://www.youtube.com/watch?v=U8ubbH2bwVY"
         icon: "youtube"
+
+  - name: "Torchlight Infinite"
+    title: "Lunaria"
+    time: "2026-04-16T21:00:00-05:00"
+    buttons:
+      video:
+        url: "https://youtu.be/B2TGNM9uPrw"
+        icon: "youtube"
+
+  - name: "Project Diablo 2"
+    title: "Season 13 - Betrayal"
+    time: "2026-04-24T10:00:00-08:00"
+    buttons: {}
+
+  - name: "Diablo 4"
+    title: "Lord of Hatred"
+    time: "2026-04-28T13:00:00-04:00"
+    block: "release_block"
+    buttons: {}
