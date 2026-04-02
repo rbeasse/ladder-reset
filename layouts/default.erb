@@ -8,19 +8,24 @@
     <meta property="og:url" content="https://gobh.at">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Gobh.at">
-    
+
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
     <%= stylesheet_tag('tailwind.css') %>
   </head>
 
   <body class="bg-catppuccin-base">
-    <div id="particles-js" class="fixed inset-0 -z-10"></div>
+    <div id="particles-js" data-controller="particles" class="fixed inset-0 -z-10"></div>
     <main class="container mx-auto px-6 py-8 font-sans text-catppuccin-text relative z-10 max-w-5xl">
       <%= yield %>
     </main>
-    
+
     <%= javascript_tag('particles.min.js') %>
-    <%= javascript_tag('lib.js') %>
-    <%= javascript_tag('app.js') %>
+    <%= javascript_tag(:stimulus) %>
+    <%= javascript_tag('controllers/time_controller.js') %>
+    <%= javascript_tag('controllers/countdown_controller.js') %>
+    <%= javascript_tag('controllers/particles_controller.js') %>
+    <%= javascript_tag('controllers/blocks_controller.js') %>
+    <%= javascript_tag('controllers/ical_controller.js') %>
+    <%= javascript_tag('application.js') %>
   </body>
 </html>

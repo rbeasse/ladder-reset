@@ -1,6 +1,10 @@
 paths:
   output_dir: '_build'
+  cache_dir:  '.charsi'
   layout_dir: 'layouts'
   assets_dir: 'assets'
   views_dir:  'views'
   helpers_dir: 'helpers'
+
+vendor:
+  stimulus: "@hotwired/stimulus@3.2.2/dist/stimulus.umd.js"

@@ -157,6 +157,24 @@
   background-position: center;
 }
 
+.path-of-exile-2 {
+  background-image: linear-gradient(rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.8)), url('/assets/images/path-of-exile.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-siege {
+  background-image: linear-gradient(rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.8)), url('/assets/images/hs.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.diablo-4 {
+  background-image: linear-gradient(rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.8)), url('/assets/images/d4.png');
+  background-size: cover;
+  background-position: center;
+}
+
 .nav-link {
   @apply px-3;
   @apply py-2;

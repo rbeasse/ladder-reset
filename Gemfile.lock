@@ -1,14 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    charsi (0.1.4)
+    charsi (0.1.6)
       filewatcher (~> 3.0)
       logger (~> 1.6)
       tailwindcss-ruby (~> 4.1)
-      terser (~> 1.2)
       tilt (~> 2.6)
       webrick (~> 1.9)
-    execjs (2.10.0)
     filewatcher (3.0.1)
       logger (~> 1.7)
       module_methods (~> 1.0)
@@ -21,8 +19,6 @@ GEM
     tailwindcss-ruby (4.2.1-x86_64-darwin)
     tailwindcss-ruby (4.2.1-x86_64-linux-gnu)
     tailwindcss-ruby (4.2.1-x86_64-linux-musl)
-    terser (1.2.6)
-      execjs (>= 0.3.0, < 3)
     tilt (2.7.0)
     webrick (1.9.2)
 

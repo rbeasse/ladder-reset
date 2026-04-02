@@ -1,7 +1,0 @@
-<%= render_partial('nav', current_page: 'history') %>
-
-<% historical_releases.each do |release| %>
-  <% block_type = release['block'] || 'normal_block' %>
-
-  <%= render_partial(block_type, release: release) %>
-<% end %>
