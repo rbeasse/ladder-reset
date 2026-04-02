@@ -100,7 +100,7 @@ releases:
 
   - name: "Hero Siege"
     title: "Season 9"
-    time: "2026-04-03T07:00:00-05:00"
+    time: "2026-04-03T08:00:00-05:00"
     buttons:
       patch_notes:
         url: "https://docs.google.com/spreadsheets/d/1ynq859UR3ufZ_flovUQCivNaGN_PVU-Kuyoc-c4cBNc/"
