@@ -31,6 +31,8 @@ var BlocksController = class extends Stimulus.Controller {
       return releaseTime < now
     })
 
+    if (this.filter === 'history') visible.reverse()
+
     this.containerTarget.innerHTML = ''
     visible.forEach(release => {
       const clone = this.templateTarget.content.cloneNode(true)

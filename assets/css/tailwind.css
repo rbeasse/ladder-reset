@@ -177,7 +177,7 @@
 
 .nav-link {
   @apply px-3;
-  @apply py-2;
+  @apply py-1;
   @apply border;
   @apply font-bold;
   @apply border-catppuccin-blue;
