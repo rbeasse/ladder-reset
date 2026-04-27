@@ -132,3 +132,11 @@ releases:
     time: "2026-04-27T16:00:00-07:00"
     block: "release_block"
     buttons: {}
+
+  - name: "Path of Exile 2"
+    title: "Return of the Ancients"
+    time: "2026-05-29T13:00:00-07:00"
+    buttons:
+      video:
+        url: "https://www.youtube.com/watch?v=tqb4pk3bkbs"
+        icon: "youtube"
