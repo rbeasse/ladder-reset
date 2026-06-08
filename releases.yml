@@ -140,3 +140,8 @@ releases:
       video:
         url: "https://www.youtube.com/watch?v=tqb4pk3bkbs"
         icon: "youtube"
+
+  - name: "Path of Exile"
+    title: "3.29"
+    time: "2026-07-24T13:00:00-07:00"
+    buttons: {}
