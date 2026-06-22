@@ -175,6 +175,12 @@
   background-position: center;
 }
 
+.grim-dawn {
+  background-image: linear-gradient(rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.8)), url('/assets/images/grimdawn.png');
+  background-size: cover;
+  background-position: center;
+}
+
 .path-of-exile-event {
   background-image: linear-gradient(rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.8)), url('/assets/images/poeevent.png');
   background-size: cover;
