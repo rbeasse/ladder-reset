@@ -151,6 +151,11 @@ releases:
     time: "2026-06-30T10:00:00-07:00"
     buttons: {}
 
+  - name: "Torchlight Infinite"
+    title: "Afterlight"
+    time: "2026-07-16T19:00:00-07:00"
+    buttons: {}
+
   - name: "Grim Dawn"
     title: "Fangs of Asterkarn"
     time: "2026-07-23T16:00:00-07:00"
