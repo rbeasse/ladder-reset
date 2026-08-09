@@ -165,3 +165,35 @@ releases:
     title: "3.29"
     time: "2026-07-24T13:00:00-07:00"
     buttons: {}
+
+  - name: "Hero Siege"
+    title: "Season 10 - Ebontharn"
+    time: "2026-08-21T08:00:00-05:00"
+    buttons:
+      patch_notes:
+        url: "https://docs.google.com/spreadsheets/d/1xy1QySbTQ0nuHgvW7xuD012qDE5ow--iiwidaeSw3rc/edit?usp=sharing"
+        icon: "file-text"
+
+  - name: "Valheim"
+    title: "1.0 - Deep North"
+    time: "2026-09-09T10:00:00-07:00"
+    buttons:
+      patch_notes:
+        url: "https://www.valheimgame.com/news/valheim-has-a-release-date-/"
+        icon: "file-text"
+
+  - name: "RuneScape: Dragonwilds"
+    title: "1.0"
+    time: "2026-09-15T10:00:00-07:00"
+    buttons:
+      patch_notes:
+        url: "https://www.jagex.com/news/runescape-dragonwilds-leaves-early-access-with-full-launch-on-15-september-2026"
+        icon: "file-text"
+
+  - name: "Last Epoch"
+    title: "Season 5 - Rage of the Frostborn"
+    time: "2026-10-01T11:00:00-05:00"
+    buttons:
+      video:
+        url: "https://www.youtube.com/watch?v=7QcZyw-Z3Sg"
+        icon: "youtube"
