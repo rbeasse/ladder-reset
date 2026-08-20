@@ -168,26 +168,10 @@ releases:
 
   - name: "Hero Siege"
     title: "Season 10 - Ebontharn"
-    time: "2026-08-21T08:00:00-05:00"
+    time: "2026-08-21T06:00:00-05:00"
     buttons:
       patch_notes:
         url: "https://docs.google.com/spreadsheets/d/1xy1QySbTQ0nuHgvW7xuD012qDE5ow--iiwidaeSw3rc/edit?usp=sharing"
-        icon: "file-text"
-
-  - name: "Valheim"
-    title: "1.0 - Deep North"
-    time: "2026-09-09T10:00:00-07:00"
-    buttons:
-      patch_notes:
-        url: "https://www.valheimgame.com/news/valheim-has-a-release-date-/"
-        icon: "file-text"
-
-  - name: "RuneScape: Dragonwilds"
-    title: "1.0"
-    time: "2026-09-15T10:00:00-07:00"
-    buttons:
-      patch_notes:
-        url: "https://www.jagex.com/news/runescape-dragonwilds-leaves-early-access-with-full-launch-on-15-september-2026"
         icon: "file-text"
 
   - name: "Last Epoch"
