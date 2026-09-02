@@ -1,5 +1,5 @@
 var BlocksController = class extends Stimulus.Controller {
-  static targets = ["container", "template", "navUpcoming", "navHistory", "navEvents"]
+  static targets = ["container", "template", "eventTemplate", "navUpcoming", "navHistory", "navEvents"]
 
   async connect() {
     const [releasesResponse, eventsResponse] = await Promise.all([
@@ -54,9 +54,11 @@ var BlocksController = class extends Stimulus.Controller {
       if (this.filter === 'history') visible.reverse()
     }
 
+    const template = this.filter === 'events' ? this.eventTemplateTarget : this.templateTarget
+
     this.containerTarget.innerHTML = ''
     visible.forEach(release => {
-      const clone = this.templateTarget.content.cloneNode(true)
+      const clone = template.content.cloneNode(true)
       this.__populate(clone, release)
       this.containerTarget.append(clone)
     })
@@ -72,8 +74,10 @@ var BlocksController = class extends Stimulus.Controller {
     block.dataset.target = release.time
 
     this.__field(clone, 'name').textContent          = release.name
-    this.__field(clone, 'title').textContent         = release.title
     this.__field(clone, 'time').dataset.timeIsoValue = release.time
+
+    const titleField = this.__field(clone, 'title')
+    if (titleField) titleField.textContent = release.title
 
     this.__setButtons(clone, release.buttons)
     this.__field(clone, 'countdown').dataset.countdownTimeValue = release.time
