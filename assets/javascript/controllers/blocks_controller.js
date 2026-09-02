@@ -80,7 +80,9 @@ var BlocksController = class extends Stimulus.Controller {
     if (titleField) titleField.textContent = release.title
 
     this.__setButtons(clone, release.buttons)
-    this.__field(clone, 'countdown').dataset.countdownTimeValue = release.time
+
+    const countdownField = this.__field(clone, 'countdown')
+    if (countdownField) countdownField.dataset.countdownTimeValue = release.time
   }
 
   __setButtons(clone, buttons) {

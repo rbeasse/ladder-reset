@@ -34,11 +34,13 @@
 
   <template data-blocks-target="eventTemplate">
     <div class="release-block">
-      <div class="grid grid-cols-3 items-center h-full">
-        <span class="font-bold text-xl leading-none uppercase" data-field="name"></span>
-        <p class="local-time justify-self-center" data-controller="time" data-field="time"></p>
-        <div class="countdown justify-self-end" data-controller="countdown" data-field="countdown">
-          <span data-countdown-target="display"></span>
+      <div class="flex justify-between items-center">
+        <div>
+          <span class="font-bold text-xl leading-none uppercase block -mt-0.5" data-field="name"></span>
+          <p class="text-sm text-catppuccin-subtext0" data-field="title"></p>
+        </div>
+        <div class="text-right">
+          <p class="local-time" data-controller="time" data-field="time"></p>
         </div>
       </div>
     </div>
