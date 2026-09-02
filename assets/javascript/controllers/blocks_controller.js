@@ -84,7 +84,9 @@ var BlocksController = class extends Stimulus.Controller {
   }
 
   __setButtons(clone, buttons) {
-    const buttonBar  = this.__field(clone, 'buttons')
+    const buttonBar = this.__field(clone, 'buttons')
+    if (!buttonBar) return
+
     const buttonList = buttons || []
     buttonBar.insertAdjacentHTML('beforeend', buttonList.map(this.__buttonHTML).join(''))
   }
