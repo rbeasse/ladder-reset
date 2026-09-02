@@ -2,7 +2,10 @@
   <nav class="mb-1">
     <div class="flex justify-between items-center gap-1">
       <div class="flex gap-1">
-        <a href="#" class="nav-link active" data-blocks-target="navUpcoming" data-action="click->blocks#showUpcoming:prevent">Upcoming</a>
+        <a href="#" class="nav-link active" data-blocks-target="navUpcoming" data-action="click->blocks#showUpcoming:prevent">Games</a>
+        <% if game_events.any? %>
+          <a href="#" class="nav-link" data-blocks-target="navEvents" data-action="click->blocks#showEvents:prevent">Events</a>
+        <% end %>
         <a href="#" class="nav-link" data-blocks-target="navHistory" data-action="click->blocks#showHistory:prevent">History</a>
       </div>
       <a href="/releases.ics" class="nav-link [&>svg]:w-4 [&>svg]:h-4 inline-flex items-center gap-1" data-controller="ical" data-action="click->ical#copy:prevent" title="Subscribe to calendar"><%= File.read('assets/images/calendar.svg').strip %> iCal</a>

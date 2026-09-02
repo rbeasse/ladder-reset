@@ -1,0 +1,19 @@
+<%= game_events.map { |event|
+  buttons = (event['buttons'] || {}).map do |button_key, button_data|
+    icon_svg = button_data['icon'] ? File.read("assets/images/#{button_data['icon']}.svg").strip : nil
+    {
+      key:      button_key,
+      label:    button_key.split('_').map(&:capitalize).join(' '),
+      url:      button_data['url'],
+      icon_svg: icon_svg
+    }
+  end
+
+  {
+    name:       event['name'],
+    title:      event['title'],
+    time:       event['time'],
+    game_class: event['name'].downcase.gsub(/[^a-z0-9]+/, '-'),
+    buttons:    buttons
+  }
+}.to_json %>

@@ -1,37 +1,58 @@
 var BlocksController = class extends Stimulus.Controller {
-  static targets = ["container", "template", "navUpcoming", "navHistory"]
+  static targets = ["container", "template", "navUpcoming", "navHistory", "navEvents"]
 
   async connect() {
-    const response   = await fetch('/releases.json')
-    this.releases    = await response.json()
-    this.filter      = 'upcoming'
+    const [releasesResponse, eventsResponse] = await Promise.all([
+      fetch('/releases.json'),
+      fetch('/events.json')
+    ])
+    this.releases = await releasesResponse.json()
+    this.events   = await eventsResponse.json()
+    this.filter   = 'upcoming'
     this.render()
   }
 
   showUpcoming() {
     this.filter = 'upcoming'
-    this.navUpcomingTarget.classList.add('active')
-    this.navHistoryTarget.classList.remove('active')
+    this.__setActiveNav(this.navUpcomingTarget)
     this.render()
   }
 
   showHistory() {
     this.filter = 'history'
-    this.navHistoryTarget.classList.add('active')
-    this.navUpcomingTarget.classList.remove('active')
+    this.__setActiveNav(this.navHistoryTarget)
     this.render()
+  }
+
+  showEvents() {
+    this.filter = 'events'
+    this.__setActiveNav(this.navEventsTarget)
+    this.render()
+  }
+
+  __setActiveNav(activeTarget) {
+    const navTargets = [this.navUpcomingTarget, this.navHistoryTarget]
+    if (this.hasNavEventsTarget) navTargets.push(this.navEventsTarget)
+
+    navTargets.forEach(target => {
+      target.classList.toggle('active', target === activeTarget)
+    })
   }
 
   render() {
     const now = new Date()
 
-    const visible = this.releases.filter(release => {
-      const releaseTime = new Date(release.time)
-      if (this.filter === 'upcoming') return releaseTime >= now
-      return releaseTime < now
-    })
-
-    if (this.filter === 'history') visible.reverse()
+    let visible
+    if (this.filter === 'events') {
+      visible = this.events
+    } else {
+      visible = this.releases.filter(release => {
+        const releaseTime = new Date(release.time)
+        if (this.filter === 'upcoming') return releaseTime >= now
+        return releaseTime < now
+      })
+      if (this.filter === 'history') visible.reverse()
+    }
 
     this.containerTarget.innerHTML = ''
     visible.forEach(release => {
