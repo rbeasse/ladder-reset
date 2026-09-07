@@ -1,9 +1,9 @@
 GIT
   remote: git@github.com:rbeasse/town-portal.git
-  revision: 20575d37be970fb0f0593844623e85c02628f1da
+  revision: 43a05268fe9e7bb328a811619993b939a2ebcdc8
   branch: main
   specs:
-    town-portal (0.1.0)
+    town-portal (0.1.1)
       json (>= 2, < 3)
       net-http (>= 0.4, < 1)
 

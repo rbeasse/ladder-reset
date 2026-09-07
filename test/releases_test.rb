@@ -2,28 +2,51 @@ require 'minitest/autorun'
 require_relative '../helpers/releases'
 
 class ReleasesTest < Minitest::Test
-  def test_fetches_once_per_build_and_decodes_buttons
-    calls = []
-    client = Object.new
-    client.define_singleton_method(:rows) do |slug|
-      calls << slug
-      [
-        { 'name' => 'Later', 'title' => 'Season 2', 'time' => '2025-09-01T12:00:00Z', 'buttons' => '{"video":{"url":"https://example.com","icon":"youtube"}}' },
-        { 'name' => 'Earlier', 'title' => 'Season 1', 'time' => '2025-08-01T12:00:00Z', 'buttons' => '{}' }
-      ]
-    end
-    TownPortal::Client.stub(:new, client) do
-      assert_equal %w[Earlier Later], game_releases.map { |row| row['name'] }
-      assert_equal 'https://example.com', game_releases.last['buttons']['video']['url']
-      assert_equal ['releases'], calls
+  def test_decodes_buttons_for_the_templates
+    with_releases([release]) do |helper|
+      buttons = helper.send(:game_releases).first.fetch('buttons')
+
+      assert_equal 'https://example.com/patch-notes', buttons.dig('patch_notes', 'url')
     end
   end
 
-  def test_remote_errors_abort_instead_of_falling_back_to_yaml
-    client = Object.new
-    client.define_singleton_method(:rows) { |_| raise TownPortal::Error, 'Tristram returned HTTP 401' }
-    TownPortal::Client.stub(:new, client) do
-      assert_raises(TownPortal::Error) { game_releases }
+  def test_fetches_once_per_build_and_keeps_the_endpoint_order
+    releases = [release('Diablo'), release('Last Epoch')]
+
+    with_releases(releases) do |helper|
+      first = helper.send(:game_releases)
+      second = helper.send(:game_releases)
+
+      assert_same first, second
+      assert_equal ['Diablo', 'Last Epoch'], first.map { |row| row.fetch('name') }
     end
+  end
+
+  def test_stops_the_build_when_tristram_is_unavailable
+    client = Minitest::Mock.new
+    client.expect(:rows, nil) { raise TownPortal::Error, 'Unable to reach Tristram' }
+
+    TownPortal::Client.stub(:new, client) do
+      assert_raises(TownPortal::Error) { Object.new.send(:game_releases) }
+    end
+  end
+
+  private
+
+  def with_releases(rows)
+    client = Minitest::Mock.new
+    client.expect(:rows, rows, ['releases'])
+
+    TownPortal::Client.stub(:new, client) { yield Object.new }
+    client.verify
+  end
+
+  def release(name = 'Diablo')
+    {
+      'name' => name,
+      'title' => 'Season 1',
+      'time' => '2025-08-01T12:00:00Z',
+      'buttons' => JSON.generate(patch_notes: { url: 'https://example.com/patch-notes' })
+    }
   end
 end
