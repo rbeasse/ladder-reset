@@ -1,11 +1,11 @@
 GIT
   remote: git@github.com:rbeasse/town-portal.git
-  revision: 43a05268fe9e7bb328a811619993b939a2ebcdc8
+  revision: 52e5e222663eb5b07a4e75e9fbdb289b338d915c
   branch: main
   specs:
     town-portal (0.1.1)
+      httparty (~> 0.24)
       json (>= 2, < 3)
-      net-http (>= 0.4, < 1)
 
 GIT
   remote: https://github.com/rbeasse/charsi.git
@@ -22,15 +22,22 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    bigdecimal (4.1.2)
+    csv (3.3.6)
     filewatcher (3.0.1)
       logger (~> 1.7)
       module_methods (~> 1.0)
+    httparty (0.24.2)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     json (2.21.2)
     logger (1.7.0)
+    mini_mime (1.1.5)
     minitest (5.27.0)
     module_methods (1.0.0)
-    net-http (0.9.1)
-      uri (>= 0.11.1)
+    multi_xml (0.9.1)
+      bigdecimal (>= 3.1, < 5)
     tailwindcss-ruby (4.2.1)
     tailwindcss-ruby (4.2.1-aarch64-linux-gnu)
     tailwindcss-ruby (4.2.1-aarch64-linux-musl)
@@ -39,7 +46,6 @@ GEM
     tailwindcss-ruby (4.2.1-x86_64-linux-gnu)
     tailwindcss-ruby (4.2.1-x86_64-linux-musl)
     tilt (2.7.0)
-    uri (1.1.1)
     webrick (1.9.2)
 
 PLATFORMS
