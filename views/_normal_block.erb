@@ -12,8 +12,8 @@
     
     <div class="flex justify-between items-end mt-8">
       <div class="button-bar">
-      <% release['buttons'].each do |button_key, button_data| %>
-        <%= button(button_key, button_data['url'], icon: button_data['icon']) %>
+      <% if release['patch_notes_url'] && !release['patch_notes_url'].empty? %>
+        <%= button('patch_notes', release['patch_notes_url']) %>
       <% end %>
       </div>
 

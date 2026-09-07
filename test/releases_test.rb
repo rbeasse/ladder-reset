@@ -2,11 +2,12 @@ require 'minitest/autorun'
 require_relative '../helpers/releases'
 
 class ReleasesTest < Minitest::Test
-  def test_decodes_buttons_for_the_templates
+  def test_keeps_the_single_patch_notes_url
     with_releases([release]) do |helper|
-      buttons = helper.send(:game_releases).first.fetch('buttons')
+      row = helper.send(:game_releases).first
 
-      assert_equal 'https://example.com/patch-notes', buttons.dig('patch_notes', 'url')
+      assert_equal 'https://example.com/patch-notes', row.fetch('patch_notes_url')
+      refute row.key?('buttons')
     end
   end
 
@@ -46,7 +47,7 @@ class ReleasesTest < Minitest::Test
       'name' => name,
       'title' => 'Season 1',
       'time' => '2025-08-01T12:00:00Z',
-      'buttons' => JSON.generate(patch_notes: { url: 'https://example.com/patch-notes' })
+      'patch_notes_url' => 'https://example.com/patch-notes'
     }
   end
 end

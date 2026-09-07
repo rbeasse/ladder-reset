@@ -4,7 +4,7 @@ Tracks video game seasons and displays countdowns. Built with Charsi.
 
 ## Release data
 
-Releases are fetched at build time from Tristram through the private `town-portal` gem. The generated site stays static: visitors read `releases.json` and `releases.ics`, never the authenticated API. Events still use `events.yml`.
+Releases are fetched at build time from Tristram through the private `town-portal` gem. The generated site stays static: visitors read `releases.json` and `releases.ics`, never the authenticated API. Each release has one optional `patch_notes_url`; videos and multiple release buttons are no longer supported. Events still use `events.yml`.
 
 The original 27 releases are archived in Tristram at `db/imports/ladder-reset-releases.yml` for the one-time, repeatable import. Edit releases in Tristram afterward, then trigger a Pages deployment to publish the changes. No YAML fallback: a failed API request fails the build and leaves the previous deployment live.
 

@@ -79,26 +79,25 @@ var BlocksController = class extends Stimulus.Controller {
     const titleField = this.__field(clone, 'title')
     if (titleField) titleField.textContent = release.title
 
-    this.__setButtons(clone, release.buttons)
+    this.__setPatchNotes(clone, release.patch_notes_url)
 
     const countdownField = this.__field(clone, 'countdown')
     if (countdownField) countdownField.dataset.countdownTimeValue = release.time
   }
 
-  __setButtons(clone, buttons) {
-    const buttonBar = this.__field(clone, 'buttons')
-    if (!buttonBar) return
+  __setPatchNotes(clone, url) {
+    const buttonBar = this.__field(clone, 'patch-notes')
+    if (!buttonBar || !url) return
 
-    const buttonList = buttons || []
-    buttonBar.insertAdjacentHTML('beforeend', buttonList.map(this.__buttonHTML).join(''))
-  }
+    const link = new URL(url)
+    if (!['https:', 'http:'].includes(link.protocol)) return
 
-  __buttonHTML(button) {
-    const isLink    = !!button.url
-    const tag       = isLink ? 'a' : 'span'
-    const linkAttrs = isLink ? ` href="${button.url}" target="_blank"` : ''
-    const classes   = isLink ? 'button' : 'button disabled'
-    const icon      = button.icon_svg ? `<span class="button-icon">${button.icon_svg}</span>` : ''
-    return `<${tag}${linkAttrs} class="${classes}">${icon}${button.label}</${tag}>`
+    const button = document.createElement('a')
+    button.href = link.href
+    button.target = '_blank'
+    button.rel = 'noopener noreferrer'
+    button.className = 'button'
+    button.textContent = 'Patch Notes'
+    buttonBar.append(button)
   }
 }
