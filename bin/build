@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+: "${TRISTRAM_URL:?Set TRISTRAM_URL in the build environment}"
+: "${TRISTRAM_API_KEY:?Set TRISTRAM_API_KEY as a build secret}"
+
+# Cloudflare builds get a read-only deploy key for the private Town Portal gem.
+# Local builds can use their existing GitHub SSH identity instead.
+if [ -n "${TOWN_PORTAL_DEPLOY_KEY:-}" ]; then
+  key_dir=$(mktemp -d)
+  trap 'rm -rf "$key_dir"' EXIT
+  printf '%s\n' "$TOWN_PORTAL_DEPLOY_KEY" > "$key_dir/id_ed25519"
+  chmod 600 "$key_dir/id_ed25519"
+  export GIT_SSH_COMMAND="ssh -i $key_dir/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$PWD/config/github_known_hosts"
+fi
+bundle install
+bundle exec charsi build
