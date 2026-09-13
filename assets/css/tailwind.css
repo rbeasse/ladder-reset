@@ -230,3 +230,23 @@
   @apply text-catppuccin-base;
   @apply border-catppuccin-blue;
 }
+
+.prediction-header, .prediction-footer {
+  @apply flex flex-wrap justify-between items-start gap-2;
+}
+
+.prediction-footer {
+  @apply mt-4 items-center;
+}
+
+.prediction-eta {
+  @apply text-catppuccin-yellow font-bold text-lg;
+}
+
+.prediction-accuracy {
+  @apply text-sm text-catppuccin-text;
+}
+
+.prediction-note {
+  @apply text-sm text-catppuccin-subtext0 mb-3 mt-3;
+}

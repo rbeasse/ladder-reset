@@ -1,11 +1,9 @@
 <div data-controller="blocks">
   <nav class="mb-1">
-    <div class="flex justify-between items-center gap-1">
+    <div class="flex flex-wrap justify-between items-center gap-1">
       <div class="flex gap-1">
         <a href="#" class="nav-link active" data-blocks-target="navUpcoming" data-action="click->blocks#showUpcoming:prevent">Games</a>
-        <% if game_events.any? %>
-          <a href="#" class="nav-link" data-blocks-target="navEvents" data-action="click->blocks#showEvents:prevent">Events</a>
-        <% end %>
+        <a href="#" class="nav-link" data-blocks-target="navPredictions" data-action="click->blocks#showPredictions:prevent">Predictions</a>
         <a href="#" class="nav-link" data-blocks-target="navHistory" data-action="click->blocks#showHistory:prevent">History</a>
       </div>
       <a href="/releases.ics" class="nav-link [&>svg]:w-4 [&>svg]:h-4 inline-flex items-center gap-1" data-controller="ical" data-action="click->ical#copy:prevent" title="Subscribe to calendar"><%= File.read('assets/images/calendar.svg').strip %> iCal</a>
@@ -32,19 +30,23 @@
     </div>
   </template>
 
-  <template data-blocks-target="eventTemplate">
-    <div class="release-block">
-      <div class="flex justify-between items-center">
+  <template data-blocks-target="predictionTemplate">
+    <div class="release-block prediction-block">
+      <div class="prediction-header">
         <div>
-          <span class="font-bold text-xl leading-none uppercase block -mt-0.5" data-field="name"></span>
+          <span class="font-bold text-xl leading-none uppercase block" data-field="name"></span>
           <p class="text-sm text-catppuccin-subtext0" data-field="title"></p>
         </div>
-        <div class="text-right">
-          <p class="local-time" data-controller="time" data-field="time"></p>
-        </div>
+        <p class="prediction-eta" data-field="eta"></p>
+      </div>
+      <div class="prediction-footer">
+        <p class="prediction-accuracy" data-field="accuracy"></p>
+        <p class="text-sm text-catppuccin-subtext0" data-field="window"></p>
       </div>
     </div>
   </template>
+
+  <p class="prediction-note" data-blocks-target="predictionNote" hidden>Estimated launch windows based on season history. Timing accuracy measures past forecasts that landed within a week.</p>
 
   <div data-blocks-target="container"></div>
 </div>

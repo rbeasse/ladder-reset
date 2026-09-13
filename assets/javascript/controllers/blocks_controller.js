@@ -1,13 +1,13 @@
 var BlocksController = class extends Stimulus.Controller {
-  static targets = ["container", "template", "eventTemplate", "navUpcoming", "navHistory", "navEvents"]
+  static targets = ["container", "template", "predictionTemplate", "predictionNote", "navUpcoming", "navHistory", "navPredictions"]
 
   async connect() {
-    const [releasesResponse, eventsResponse] = await Promise.all([
+    const [releasesResponse, predictionsResponse] = await Promise.all([
       fetch('/releases.json'),
-      fetch('/events.json')
+      fetch('/predictions.json')
     ])
     this.releases = await releasesResponse.json()
-    this.events   = await eventsResponse.json()
+    this.predictions = await predictionsResponse.json()
     this.filter   = 'upcoming'
     this.render()
   }
@@ -24,15 +24,15 @@ var BlocksController = class extends Stimulus.Controller {
     this.render()
   }
 
-  showEvents() {
-    this.filter = 'events'
-    this.__setActiveNav(this.navEventsTarget)
+  showPredictions() {
+    this.filter = 'predictions'
+    this.__setActiveNav(this.navPredictionsTarget)
     this.render()
   }
 
   __setActiveNav(activeTarget) {
     const navTargets = [this.navUpcomingTarget, this.navHistoryTarget]
-    if (this.hasNavEventsTarget) navTargets.push(this.navEventsTarget)
+    navTargets.push(this.navPredictionsTarget)
 
     navTargets.forEach(target => {
       target.classList.toggle('active', target === activeTarget)
@@ -43,8 +43,8 @@ var BlocksController = class extends Stimulus.Controller {
     const now = new Date()
 
     let visible
-    if (this.filter === 'events') {
-      visible = this.events
+    if (this.filter === 'predictions') {
+      visible = this.predictions.filter(prediction => new Date(prediction.time) >= now)
     } else {
       visible = this.releases.filter(release => {
         const releaseTime = new Date(release.time)
@@ -54,12 +54,20 @@ var BlocksController = class extends Stimulus.Controller {
       if (this.filter === 'history') visible.reverse()
     }
 
-    const template = this.filter === 'events' ? this.eventTemplateTarget : this.templateTarget
+    const template = this.filter === 'predictions' ? this.predictionTemplateTarget : this.templateTarget
 
+    this.predictionNoteTarget.hidden = this.filter !== 'predictions'
     this.containerTarget.innerHTML = ''
+    if (!visible.length) {
+      const message = document.createElement('p')
+      message.className = 'text-sm text-catppuccin-subtext0'
+      message.textContent = this.filter === 'predictions' ? 'No upcoming predictions available.' : 'No releases to show.'
+      this.containerTarget.append(message)
+    }
     visible.forEach(release => {
       const clone = template.content.cloneNode(true)
-      this.__populate(clone, release)
+      if (this.filter === 'predictions') this.__populatePrediction(clone, release)
+      else this.__populate(clone, release)
       this.containerTarget.append(clone)
     })
   }
@@ -83,6 +91,17 @@ var BlocksController = class extends Stimulus.Controller {
 
     const countdownField = this.__field(clone, 'countdown')
     if (countdownField) countdownField.dataset.countdownTimeValue = release.time
+  }
+
+  __populatePrediction(clone, prediction) {
+    clone.querySelector('.release-block').classList.add(prediction.game_class)
+    this.__field(clone, 'name').textContent = prediction.name
+    this.__field(clone, 'title').textContent = prediction.title
+    this.__field(clone, 'eta').textContent = prediction.eta
+    this.__field(clone, 'window').textContent = `Likely window: ${prediction.window}`
+    const accuracy = this.__field(clone, 'accuracy')
+    accuracy.textContent = prediction.timing_accuracy === null ? 'Building timing history' : `${prediction.timing_accuracy}% timing accuracy`
+    accuracy.title = `${prediction.backtest_hits} of ${prediction.backtest_count} recent forecasts landed within 7 days.`
   }
 
   __setPatchNotes(clone, url) {

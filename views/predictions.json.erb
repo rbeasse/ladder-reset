@@ -1,0 +1,13 @@
+<%= game_predictions.map { |prediction|
+  {
+    name: prediction.fetch('name'),
+    title: prediction.fetch('title'),
+    time: prediction.fetch('time'),
+    game_class: prediction.fetch('name').downcase.gsub(/[^a-z0-9]+/, '-'),
+    eta: prediction_eta(prediction),
+    window: prediction_window(prediction),
+    timing_accuracy: prediction['timing_accuracy'],
+    backtest_count: prediction.fetch('backtest_count'),
+    backtest_hits: prediction.fetch('backtest_hits')
+  }
+}.to_json %>

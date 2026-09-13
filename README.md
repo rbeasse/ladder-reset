@@ -4,7 +4,7 @@ Tracks video game seasons and displays countdowns. Built with Charsi.
 
 ## Release data
 
-Releases are fetched at build time from Tristram through the private `town-portal` gem. The generated site stays static: visitors read `releases.json` and `releases.ics`, never the authenticated API. Each release has one optional `patch_notes_url`; videos and multiple release buttons are no longer supported. Events still use `events.yml`.
+Releases are fetched at build time from Tristram through the private `town-portal` gem. The generated site stays static: visitors read `releases.json` and `releases.ics`, never the authenticated API. Each release has one optional `patch_notes_url`; videos and multiple release buttons are no longer supported. Predictions are fetched from the separate authenticated `predictions` endpoint at build time and published as static `predictions.json`. The Predictions tab replaces Events. Rough ETAs use early/mid/end-of-month labels; dates are shown only at 90% or better historical timing accuracy with at least five backtests. Accuracy is the share of up to five recent forecasts within seven days, not a calibrated future probability. Forecast windows are shown separately.
 
 The original 27 releases are archived in Tristram at `db/imports/ladder-reset-releases.yml` for the one-time, repeatable import. Edit releases in Tristram afterward, then trigger a Pages deployment to publish the changes. No YAML fallback: a failed API request fails the build and leaves the previous deployment live.
 
@@ -29,7 +29,7 @@ For a local SSH tunnel, `TRISTRAM_URL=http://127.0.0.1:8080` is supported. Keep 
 ## Tests
 
 ```sh
-bundle exec ruby test/releases_test.rb
+bundle exec ruby -e 'Dir["test/*_test.rb"].each { |file| require_relative file }'
 ```
 
 Tests use Minitest from the test dependency group. Charsi's own tests verify that each build gets fresh helper state.
