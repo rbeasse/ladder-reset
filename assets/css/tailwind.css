@@ -170,13 +170,13 @@
 }
 
 .diablo-3 {
-  background-image: linear-gradient(rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.8)), url('/assets/images/d3.png');
+  background-image: linear-gradient(rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.8)), url('/assets/images/d3.7cae396ae935.png');
   background-size: cover;
   background-position: center;
 }
 
 .diablo-ii-resurrected {
-  background-image: linear-gradient(rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.8)), url('/assets/images/d2r.png');
+  background-image: linear-gradient(rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.8)), url('/assets/images/d2r.9fdb380578e3.png');
   background-size: cover;
   background-position: center;
 }
